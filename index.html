@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="is">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AEF Verkefni" />
+    <title>Verkefnalisti — Eitt skref í einu grashoppari</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <header class="haus">
+      <a class="haustexti-1" href="./" aria-label="Verkefnalistinn, forsíða"
+        ><span class="titill-1">✓</span> VERKEFNALISTINN<span
+          class="verkefnalistinn"
+          >.</span
+        ></a
+      >
+      <span class="hausmerking">ÞITT SVÆÐI · ÞÍN YFIRSÝN</span>
+    </header>
+
+    <main>
+      <section class="kynning" aria-labelledby="adalfyrirsogn">
+        <p class="yfirskrift"><span></span> Verkefnin þín á einum stað.</p>
+        <h1 id="adalfyrirsogn">Bættu við <em> hér! </em></h1>
+        <p class="inngangur">Taktu þinn tíma og gerðu þitt besta.</p>
+      </section>
+
+      <form id="verkefnaform">
+        <label class="falin" for="nyttverkefni">Nýtt verkefni</label>
+        <span aria-hidden="true" class="plustakn">＋</span>
+        <input
+          id="nyttverkefni"
+          type="text"
+          placeholder="Verkefni"
+          maxlength="160"
+          required
+          autocomplete="off"
+        />
+
+        <button class="baetavid" type="submit">
+          Bæta við <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+
+      <section class="tolfraedi" aria-label="yfirlit verkefna">
+        <div>
+          <span class="talnaheiti">ÖLL VERKEFNI</span
+          ><strong id="heildarfjoldi">0</strong
+          ><span class="talnamerki">✅</span>
+        </div>
+        <div>
+          <span class="talnaheiti">ÓLOKIÐ</span
+          ><strong id="olokinfjoldi">0</strong
+          ><span class="talnamerki">🤔</span>
+        </div>
+        <div>
+          <span class="talnaheiti">LOKIÐ</span
+          ><strong id="lokinfjoldi">0</strong>
+          <span class="talnamerki">😁🎉</span>
+        </div>
+      </section>
+
+      <section class="verkefnalisti" aria-labelledby="verkefnalisti">
+        <h2 id="listafyrirsogn">verkefnin mín</h2>
+
+        <div class="listastika">
+          <div class="siur" role="group" aria-label="Sía verkefni">
+            <button
+              type="button"
+              data-sia="oll"
+              class="valin"
+              aria-pressed="true"
+            >
+              Öll verkefni</button
+            ><button type="button" data-sia="olokid" aria-pressed="false">
+              Ólokið</button
+            ><button type="button" data-sia="lokid" aria-pressed="false">
+              Lokið
+            </button>
+          </div>
+          <span id="synilegur-fjoldi"></span>
+        </div>
+        <ul id="verkefnalisti" aria-label="i">
+          listafyrirsogn
+        </ul>
+        <p id="tomur-listi" hidden>Engin verkefni hér</p>
+        <div class="framvinda">
+          <div>
+            <span>Þín framvinda</span><span id="framvindutexti">0% lokið</span>
+          </div>
+          <progress id="framvindustika" max="100" value="0">0%</progress>
+        </div>
+      </section>
+      <p class="hvatning">„Það byrjar allt á einu litlu skrefi.“</p>
+      <p id="tilkynning" class="falin" role="status"></p>
+    </main>
+
+    <footer>
+      <span>VERKEFNALISTINN<span class="footer">.</span></span
+      ><span>Minna óreiða. Meiri yfirsýn.</span
+      ><span>HTML · CSS · JAVASCRIPT</span>
+    </footer>
+  </body>
+</html>
